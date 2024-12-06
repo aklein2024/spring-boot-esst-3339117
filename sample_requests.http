@@ -3,3 +3,17 @@ GET http://localhost:8080/dirty-secrets/count
 ###
 
 GET http://localhost:8080/dirty-secrets/test-123
+
+###
+
+GET http://localhost:8080/dirty-secrets/test-999
+
+###
+
+POST http://localhost:8080/dirty-secrets
+Content-Type: application/json
+
+{
+  "name": "Rutdrik",
+  "secret": "He stole a pacifier from a baby and stuck it up his butt"
+}

@@ -15,16 +15,29 @@ public class DirtySecretsRepository {
     secret.setName("Doug");
     secret.setSecret("Ex Alcoholic");
     this.secrets.put(secret.getId(), secret);
+
+    secret.setId("test-12");
+    secret.setName("Ilse");
+    secret.setSecret("Loves rotten meat");
+    this.secrets.put(secret.getId(), secret);
   }
 
-  Optional<DirtySecret> getById(String id) {
+  public Optional<DirtySecret> getById(String id) {
     if (!this.secrets.containsKey(id)) {
       return Optional.empty();
     }
     return Optional.of(this.secrets.get(id));
   }
 
-  int count() {
+  public DirtySecret save(DirtySecret secret) {
+    String id = "test-999";
+    secret.setId(id);
+    this.secrets.put(id, secret);
+
+    return this.secrets.get(id);
+  }
+
+  public int count() {
     return this.secrets.size();
   }
 
